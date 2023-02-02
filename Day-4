@@ -1,0 +1,741 @@
+# Day-4
+1.How to compare two JSON have the same properties without order?
+       a.var obj1 = { name: "Person 1", age:5 };
+       b.var obj2 = { age:5, name: "Person 1" };
+
+Ans:-
+
+var JsonCompare = (obj1,obj2)=>{
+
+
+  keys1 = Object.keys(obj1);
+  keys2 = Object.keys(obj2);
+
+}
+
+var obj1 = {
+  name: "Person 1",
+  age: 5,
+};
+
+var obj2 = {
+  age: 5,
+  name: "Person 1"
+};
+
+
+console.log("json compare");
+
+
+2.Use the rest countries API url-> https://restcountries.com/v2/all and display all the country flags in console?
+
+Ans:-
+
+var xhr = new XMLHttpRequest();
+
+xhr.open("GET", "https://restcountries.com/v3/all");
+
+xhr.send();
+
+
+xhr.onload = function () {
+  
+  if (xhr.status >= 200 && xhr.status < 300) {
+    //conver the data raw data to js notation
+    var data = JSON.parse(xhr.response);
+    
+
+    //Looping through the data
+    for (var i = 0; i < data.length; i++) {
+      var user = data[i];
+      console.log(`
+      Flag: ${user.flag}
+      `);
+    }
+  }
+};
+
+//output
+
+
+Flag: 🇳🇮
+Task 4.js:18:15
+
+Flag: 🇦🇮
+Task 4.js:18:15
+
+Flag: 🇧🇱
+Task 4.js:18:15
+
+Flag: 🇱🇻
+Task 4.js:18:15
+
+Flag: 🇬🇶
+Task 4.js:18:15
+
+Flag: 🇭🇳
+Task 4.js:18:15
+
+Flag: 🇯🇵
+Task 4.js:18:15
+
+Flag: 🇱🇷
+Task 4.js:18:15
+
+Flag: 🇨🇺
+Task 4.js:18:15
+
+Flag: 🇲🇾
+Task 4.js:18:15
+
+Flag: 🇵🇷
+Task 4.js:18:15
+
+Flag: 🇸🇻
+Task 4.js:18:15
+
+Flag: 🇹🇰
+Task 4.js:18:15
+
+Flag: 🇮🇪
+Task 4.js:18:15
+
+Flag: 🇰🇮
+Task 4.js:18:15
+
+Flag: 🇳🇿
+Task 4.js:18:15
+
+Flag: 🇦🇬
+Task 4.js:18:15
+
+Flag: 🇹🇬
+Task 4.js:18:15
+
+Flag: 🇺🇿
+Task 4.js:18:15
+
+Flag: 🇬🇪
+Task 4.js:18:15
+
+Flag: 🇰🇬
+Task 4.js:18:15
+
+Flag: 🇵🇭
+Task 4.js:18:15
+
+Flag: 🇰🇵
+Task 4.js:18:15
+
+Flag: 🇹🇻
+Task 4.js:18:15
+
+Flag: 🇺🇾
+Task 4.js:18:15
+
+Flag: 🇧🇾
+Task 4.js:18:15
+
+Flag: 🇸🇪
+Task 4.js:18:15
+
+Flag: 🇸🇸
+Task 4.js:18:15
+
+Flag: 🇲🇴
+Task 4.js:18:15
+
+Flag: 🇸🇩
+Task 4.js:18:15
+
+Flag: 🇳🇱
+Task 4.js:18:15
+
+Flag: 🇬🇦
+Task 4.js:18:15
+
+Flag: 🇨🇮
+Task 4.js:18:15
+
+Flag: 🇿🇦
+Task 4.js:18:15
+
+Flag: 🇨🇳
+Task 4.js:18:15
+
+Flag: 🇩🇯
+Task 4.js:18:15
+
+Flag: 🇮🇷
+Task 4.js:18:15
+
+Flag: 🇳🇷
+Task 4.js:18:15
+
+Flag: 🇬🇧
+Task 4.js:18:15
+
+Flag: 🇹🇹
+Task 4.js:18:15
+
+Flag: 🇳🇫
+Task 4.js:18:15
+
+Flag: 🇨🇲
+Task 4.js:18:15
+
+Flag: 🇬🇩
+Task 4.js:18:15
+
+Flag: 🇲🇰
+Task 4.js:18:15
+
+Flag: 🇧🇭
+Task 4.js:18:15
+
+Flag: 🇪🇸
+Task 4.js:18:15
+
+Flag: 🇦🇺
+Task 4.js:18:15
+
+Flag: 🇴🇲
+Task 4.js:18:15
+
+Flag: 🇬🇾
+Task 4.js:18:15
+
+Flag: 🇱🇰
+Task 4.js:18:15
+
+Flag: 🇬🇹
+Task 4.js:18:15
+
+Flag: 🇯🇴
+Task 4.js:18:15
+
+Flag: 🇸🇳
+Task 4.js:18:15
+
+Flag: 🇫🇷
+Task 4.js:18:15
+
+Flag: 🇼🇫
+Task 4.js:18:15
+
+Flag: 🇿🇲
+Task 4.js:18:15
+
+Flag: 🇧🇷
+Task 4.js:18:15
+
+Flag: 🇩🇴
+Task 4.js:18:15
+
+Flag: 🇰🇳
+Task 4.js:18:15
+
+Flag: 🇪🇷
+Task 4.js:18:15
+
+Flag: 🇹🇫
+Task 4.js:18:15
+
+Flag: 🇪🇹
+Task 4.js:18:15
+
+Flag: 🇮🇱
+Task 4.js:18:15
+
+Flag: 🇮🇴
+Task 4.js:18:15
+
+Flag: 🇯🇪
+Task 4.js:18:15
+
+Flag: 🇨🇱
+Task 4.js:18:15
+
+Flag: 🇹🇴
+Task 4.js:18:15
+
+Flag: 🇲🇱
+Task 4.js:18:15
+
+Flag: 🇫🇴
+Task 4.js:18:15
+
+Flag: 🇰🇿
+Task 4.js:18:15
+
+Flag: 🇵🇰
+Task 4.js:18:15
+
+3.use the same rest countries and print all countries names,regions,sub-region and populations?
+
+Ans:-
+
+var xhr = new XMLHttpRequest();
+
+xhr.open("GET", "https://restcountries.com/v3/all");
+
+xhr.send();
+
+
+xhr.onload = function () {
+  
+  if (xhr.status >= 200 && xhr.status < 300) {
+    //conver the data raw data to js notation
+    var data = JSON.parse(xhr.response);
+    
+
+    //Looping through the data
+    for (var i = 0; i < data.length; i++) {
+      var user = data[i];
+      console.log(`
+      NAME: ${user.name}
+      REGION: ${user.region}
+      SUBREGION: ${user.subregion}
+      POPULATION: ${user.population}
+      `);
+    }
+  }
+};
+
+//output
+
+NAME: [object Object]
+      REGION: Americas
+      SUBREGION: Central America
+      POPULATION: 6624554
+      Task 4.js:18:15
+
+      NAME: [object Object]
+      REGION: Americas
+      SUBREGION: Caribbean
+      POPULATION: 13452
+      Task 4.js:18:15
+
+      NAME: [object Object]
+      REGION: Americas
+      SUBREGION: Caribbean
+      POPULATION: 4255
+      Task 4.js:18:15
+
+      NAME: [object Object]
+      REGION: Europe
+      SUBREGION: Northern Europe
+      POPULATION: 1901548
+      Task 4.js:18:15
+
+      NAME: [object Object]
+      REGION: Africa
+      SUBREGION: Middle Africa
+      POPULATION: 1402985
+      Task 4.js:18:15
+
+      NAME: [object Object]
+      REGION: Americas
+      SUBREGION: Central America
+      POPULATION: 9904608
+      Task 4.js:18:15
+
+      NAME: [object Object]
+      REGION: Asia
+      SUBREGION: Eastern Asia
+      POPULATION: 125836021
+      Task 4.js:18:15
+
+      NAME: [object Object]
+      REGION: Africa
+      SUBREGION: Western Africa
+      POPULATION: 5057677
+      Task 4.js:18:15
+
+      NAME: [object Object]
+      REGION: Americas
+      SUBREGION: Caribbean
+      POPULATION: 11326616
+      Task 4.js:18:15
+
+      NAME: [object Object]
+      REGION: Asia
+      SUBREGION: South-Eastern Asia
+      POPULATION: 32365998
+      Task 4.js:18:15
+
+      NAME: [object Object]
+      REGION: Americas
+      SUBREGION: Caribbean
+      POPULATION: 3194034
+      Task 4.js:18:15
+
+      NAME: [object Object]
+      REGION: Americas
+      SUBREGION: Central America
+      POPULATION: 6486201
+      Task 4.js:18:15
+
+      NAME: [object Object]
+      REGION: Oceania
+      SUBREGION: Polynesia
+      POPULATION: 1411
+      Task 4.js:18:15
+
+      NAME: [object Object]
+      REGION: Europe
+      SUBREGION: Northern Europe
+      POPULATION: 4994724
+      Task 4.js:18:15
+
+      NAME: [object Object]
+      REGION: Oceania
+      SUBREGION: Micronesia
+      POPULATION: 119446
+      Task 4.js:18:15
+
+      NAME: [object Object]
+      REGION: Oceania
+      SUBREGION: Australia and New Zealand
+      POPULATION: 5084300
+      Task 4.js:18:15
+
+      NAME: [object Object]
+      REGION: Americas
+      SUBREGION: Caribbean
+      POPULATION: 97928
+      Task 4.js:18:15
+
+      NAME: [object Object]
+      REGION: Africa
+      SUBREGION: Western Africa
+      POPULATION: 8278737
+      Task 4.js:18:15
+
+      NAME: [object Object]
+      REGION: Asia
+      SUBREGION: Central Asia
+      POPULATION: 34232050
+      Task 4.js:18:15
+
+      NAME: [object Object]
+      REGION: Asia
+      SUBREGION: Western Asia
+      POPULATION: 3714000
+      Task 4.js:18:15
+
+      NAME: [object Object]
+      REGION: Asia
+      SUBREGION: Central Asia
+      POPULATION: 6591600
+      Task 4.js:18:15
+
+      NAME: [object Object]
+      REGION: Asia
+      SUBREGION: South-Eastern Asia
+      POPULATION: 109581085
+      Task 4.js:18:15
+
+      NAME: [object Object]
+      REGION: Asia
+      SUBREGION: Eastern Asia
+      POPULATION: 25778815
+      Task 4.js:18:15
+
+      NAME: [object Object]
+      REGION: Oceania
+      SUBREGION: Polynesia
+      POPULATION: 11792
+      Task 4.js:18:15
+
+      NAME: [object Object]
+      REGION: Americas
+      SUBREGION: South America
+      POPULATION: 3473727
+      Task 4.js:18:15
+
+      NAME: [object Object]
+      REGION: Europe
+      SUBREGION: Eastern Europe
+      POPULATION: 9398861
+      Task 4.js:18:15
+
+      NAME: [object Object]
+      REGION: Europe
+      SUBREGION: Northern Europe
+      POPULATION: 10353442
+      Task 4.js:18:15
+
+      NAME: [object Object]
+      REGION: Africa
+      SUBREGION: Middle Africa
+      POPULATION: 11193729
+      Task 4.js:18:15
+
+      NAME: [object Object]
+      REGION: Asia
+      SUBREGION: Eastern Asia
+      POPULATION: 649342
+      Task 4.js:18:15
+
+      NAME: [object Object]
+      REGION: Africa
+      SUBREGION: Northern Africa
+      POPULATION: 43849269
+      Task 4.js:18:15
+
+      NAME: [object Object]
+      REGION: Europe
+      SUBREGION: Western Europe
+      POPULATION: 16655799
+      Task 4.js:18:15
+
+      NAME: [object Object]
+      REGION: Africa
+      SUBREGION: Middle Africa
+      POPULATION: 2225728
+      Task 4.js:18:15
+
+      NAME: [object Object]
+      REGION: Africa
+      SUBREGION: Western Africa
+      POPULATION: 26378275
+      Task 4.js:18:15
+
+      NAME: [object Object]
+      REGION: Africa
+      SUBREGION: Southern Africa
+      POPULATION: 59308690
+      Task 4.js:18:15
+
+      NAME: [object Object]
+      REGION: Asia
+      SUBREGION: Eastern Asia
+      POPULATION: 1402112000
+      Task 4.js:18:15
+
+      NAME: [object Object]
+      REGION: Africa
+      SUBREGION: Eastern Africa
+      POPULATION: 988002
+      Task 4.js:18:15
+
+      NAME: [object Object]
+      REGION: Asia
+      SUBREGION: Southern Asia
+      POPULATION: 83992953
+      Task 4.js:18:15
+
+      NAME: [object Object]
+      REGION: Oceania
+      SUBREGION: Micronesia
+      POPULATION: 10834
+      Task 4.js:18:15
+
+      NAME: [object Object]
+      REGION: Europe
+      SUBREGION: Northern Europe
+      POPULATION: 67215293
+      Task 4.js:18:15
+
+      NAME: [object Object]
+      REGION: Americas
+      SUBREGION: Caribbean
+      POPULATION: 1399491
+      Task 4.js:18:15
+
+      NAME: [object Object]
+      REGION: Oceania
+      SUBREGION: Australia and New Zealand
+      POPULATION: 2302
+      Task 4.js:18:15
+
+      NAME: [object Object]
+      REGION: Africa
+      SUBREGION: Middle Africa
+      POPULATION: 26545864
+      Task 4.js:18:15
+
+      NAME: [object Object]
+      REGION: Americas
+      SUBREGION: Caribbean
+      POPULATION: 112519
+      Task 4.js:18:15
+
+      NAME: [object Object]
+      REGION: Europe
+      SUBREGION: Southeast Europe
+      POPULATION: 2077132
+      Task 4.js:18:15
+
+      NAME: [object Object]
+      REGION: Asia
+      SUBREGION: Western Asia
+      POPULATION: 1701583
+      Task 4.js:18:15
+
+      NAME: [object Object]
+      REGION: Europe
+      SUBREGION: Southern Europe
+      POPULATION: 47351567
+      Task 4.js:18:15
+
+      NAME: [object Object]
+      REGION: Oceania
+      SUBREGION: Australia and New Zealand
+      POPULATION: 25687041
+      Task 4.js:18:15
+
+      NAME: [object Object]
+      REGION: Asia
+      SUBREGION: Western Asia
+      POPULATION: 5106622
+      Task 4.js:18:15
+
+      NAME: [object Object]
+      REGION: Americas
+      SUBREGION: South America
+      POPULATION: 786559
+      Task 4.js:18:15
+
+      NAME: [object Object]
+      REGION: Asia
+      SUBREGION: Southern Asia
+      POPULATION: 21919000
+      Task 4.js:18:15
+
+      NAME: [object Object]
+      REGION: Americas
+      SUBREGION: Central America
+      POPULATION: 16858333
+      Task 4.js:18:15
+
+      NAME: [object Object]
+      REGION: Asia
+      SUBREGION: Western Asia
+      POPULATION: 10203140
+      Task 4.js:18:15
+
+      NAME: [object Object]
+      REGION: Africa
+      SUBREGION: Western Africa
+      POPULATION: 16743930
+      Task 4.js:18:15
+
+      NAME: [object Object]
+      REGION: Europe
+      SUBREGION: Western Europe
+      POPULATION: 67391582
+      Task 4.js:18:15
+
+      NAME: [object Object]
+      REGION: Oceania
+      SUBREGION: Polynesia
+      POPULATION: 11750
+      Task 4.js:18:15
+
+      NAME: [object Object]
+      REGION: Africa
+      SUBREGION: Eastern Africa
+      POPULATION: 18383956
+      Task 4.js:18:15
+
+      NAME: [object Object]
+      REGION: Americas
+      SUBREGION: South America
+      POPULATION: 212559409
+      Task 4.js:18:15
+
+      NAME: [object Object]
+      REGION: Americas
+      SUBREGION: Caribbean
+      POPULATION: 10847904
+      Task 4.js:18:15
+
+      NAME: [object Object]
+      REGION: Americas
+      SUBREGION: Caribbean
+      POPULATION: 53192
+      Task 4.js:18:15
+
+      NAME: [object Object]
+      REGION: Africa
+      SUBREGION: Eastern Africa
+      POPULATION: 5352000
+      Task 4.js:18:15
+
+      NAME: [object Object]
+      REGION: Antarctic
+      SUBREGION: undefined
+      POPULATION: 400
+      Task 4.js:18:15
+
+      NAME: [object Object]
+      REGION: Africa
+      SUBREGION: Eastern Africa
+      POPULATION: 114963583
+      Task 4.js:18:15
+
+      NAME: [object Object]
+      REGION: Asia
+      SUBREGION: Western Asia
+      POPULATION: 9216900
+      Task 4.js:18:15
+
+      NAME: [object Object]
+      REGION: Africa
+      SUBREGION: Eastern Africa
+      POPULATION: 3000
+      Task 4.js:18:15
+
+      NAME: [object Object]
+      REGION: Europe
+      SUBREGION: Northern Europe
+      POPULATION: 100800
+      Task 4.js:18:15
+
+      NAME: [object Object]
+      REGION: Americas
+      SUBREGION: South America
+      POPULATION: 19116209
+      Task 4.js:18:15
+
+      NAME: [object Object]
+      REGION: Oceania
+      SUBREGION: Polynesia
+      POPULATION: 105697
+      Task 4.js:18:15
+
+      NAME: [object Object]
+      REGION: Africa
+      SUBREGION: Western Africa
+      POPULATION: 20250834
+      Task 4.js:18:15
+
+      NAME: [object Object]
+      REGION: Europe
+      SUBREGION: Northern Europe
+      POPULATION: 48865
+      Task 4.js:18:15
+
+      NAME: [object Object]
+      REGION: Asia
+      SUBREGION: Central Asia
+      POPULATION: 18754440
+      Task 4.js:18:15
+
+      NAME: [object Object]
+      REGION: Asia
+      SUBREGION: Southern Asia
+      POPULATION: 220892331
+      Task 4.js:18:15
+
+
+
+
+
+
+
+
+
+
