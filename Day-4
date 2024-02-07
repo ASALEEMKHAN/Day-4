@@ -1,32 +1,28 @@
 # Day-4
+
 1.How to compare two JSON have the same properties without order?
        a.var obj1 = { name: "Person 1", age:5 };
        b.var obj2 = { age:5, name: "Person 1" };
 
 Ans:-
 
-var obj1 = { name: "Person 1", age:5 };
-var obj2 = { age:5, name: "Person 1" };
+var obj1 = { name: "Person 1", age: 5 };
+var obj2 = { age: 5, name: "Person 1" };
 
-function compareJSON(obj1, obj2) {
-  var keys1 = Object.keys(obj1);
-  var keys2 = Object.keys(obj2);
+// Convert objects to strings
+var objStr1 = JSON.stringify(obj1);
+var objStr2 = JSON.stringify(obj2);
 
-  if (keys1.length !== keys2.length) {
-    return false;
-  }
+// Sort the strings
+var sortedObjStr1 = objStr1.split("").sort().join("");
+var sortedObjStr2 = objStr2.split("").sort().join("");
 
-  for (var i = 0; i < keys1.length; i++) {
-    var key = keys1[i];
-    if (obj1[key] !== obj2[key]) {
-      return false;
-    }
-  }
-
-  return true;
+// Compare the sorted strings
+if (sortedObjStr1 === sortedObjStr2) {
+  console.log("Objects have the same properties.");
+} else {
+  console.log("Objects do not have the same properties.");
 }
-
-console.log(compareJSON(obj1, obj2)); 
 
 2.Use the rest countries API url-> https://restcountries.com/v2/all and display all the country flags in console?
 
@@ -42,7 +38,7 @@ xhr.send();
 xhr.onload = function () {
   
   if (xhr.status >= 200 && xhr.status < 300) {
-    //conver the data raw data to js notation
+    
     var data = JSON.parse(xhr.response);
     
 
@@ -58,220 +54,756 @@ xhr.onload = function () {
 
 //output
 
-
-Flag: 🇳🇮
-Task 4.js:18:15
-
-Flag: 🇦🇮
-Task 4.js:18:15
-
-Flag: 🇧🇱
-Task 4.js:18:15
-
-Flag: 🇱🇻
-Task 4.js:18:15
-
-Flag: 🇬🇶
-Task 4.js:18:15
-
-Flag: 🇭🇳
-Task 4.js:18:15
-
-Flag: 🇯🇵
-Task 4.js:18:15
-
-Flag: 🇱🇷
-Task 4.js:18:15
-
-Flag: 🇨🇺
-Task 4.js:18:15
-
-Flag: 🇲🇾
-Task 4.js:18:15
-
-Flag: 🇵🇷
-Task 4.js:18:15
-
-Flag: 🇸🇻
-Task 4.js:18:15
-
-Flag: 🇹🇰
-Task 4.js:18:15
-
-Flag: 🇮🇪
-Task 4.js:18:15
-
-Flag: 🇰🇮
-Task 4.js:18:15
-
-Flag: 🇳🇿
-Task 4.js:18:15
-
-Flag: 🇦🇬
-Task 4.js:18:15
-
-Flag: 🇹🇬
-Task 4.js:18:15
-
-Flag: 🇺🇿
-Task 4.js:18:15
-
-Flag: 🇬🇪
-Task 4.js:18:15
-
-Flag: 🇰🇬
-Task 4.js:18:15
-
-Flag: 🇵🇭
-Task 4.js:18:15
-
-Flag: 🇰🇵
-Task 4.js:18:15
-
-Flag: 🇹🇻
-Task 4.js:18:15
-
-Flag: 🇺🇾
-Task 4.js:18:15
-
-Flag: 🇧🇾
-Task 4.js:18:15
-
-Flag: 🇸🇪
-Task 4.js:18:15
-
-Flag: 🇸🇸
-Task 4.js:18:15
-
-Flag: 🇲🇴
-Task 4.js:18:15
-
-Flag: 🇸🇩
-Task 4.js:18:15
-
-Flag: 🇳🇱
-Task 4.js:18:15
-
-Flag: 🇬🇦
-Task 4.js:18:15
-
-Flag: 🇨🇮
-Task 4.js:18:15
-
-Flag: 🇿🇦
-Task 4.js:18:15
-
-Flag: 🇨🇳
-Task 4.js:18:15
-
-Flag: 🇩🇯
-Task 4.js:18:15
-
-Flag: 🇮🇷
-Task 4.js:18:15
-
-Flag: 🇳🇷
-Task 4.js:18:15
-
-Flag: 🇬🇧
-Task 4.js:18:15
-
-Flag: 🇹🇹
-Task 4.js:18:15
-
-Flag: 🇳🇫
-Task 4.js:18:15
-
-Flag: 🇨🇲
-Task 4.js:18:15
-
-Flag: 🇬🇩
-Task 4.js:18:15
-
-Flag: 🇲🇰
-Task 4.js:18:15
-
-Flag: 🇧🇭
-Task 4.js:18:15
-
-Flag: 🇪🇸
-Task 4.js:18:15
-
-Flag: 🇦🇺
-Task 4.js:18:15
-
-Flag: 🇴🇲
-Task 4.js:18:15
-
-Flag: 🇬🇾
-Task 4.js:18:15
-
-Flag: 🇱🇰
-Task 4.js:18:15
-
-Flag: 🇬🇹
-Task 4.js:18:15
-
-Flag: 🇯🇴
-Task 4.js:18:15
-
-Flag: 🇸🇳
-Task 4.js:18:15
-
-Flag: 🇫🇷
-Task 4.js:18:15
-
-Flag: 🇼🇫
-Task 4.js:18:15
-
-Flag: 🇿🇲
-Task 4.js:18:15
-
-Flag: 🇧🇷
-Task 4.js:18:15
-
-Flag: 🇩🇴
-Task 4.js:18:15
-
-Flag: 🇰🇳
-Task 4.js:18:15
-
-Flag: 🇪🇷
-Task 4.js:18:15
-
-Flag: 🇹🇫
-Task 4.js:18:15
-
-Flag: 🇪🇹
-Task 4.js:18:15
-
-Flag: 🇮🇱
-Task 4.js:18:15
-
-Flag: 🇮🇴
-Task 4.js:18:15
-
-Flag: 🇯🇪
-Task 4.js:18:15
-
-Flag: 🇨🇱
-Task 4.js:18:15
-
-Flag: 🇹🇴
-Task 4.js:18:15
-
-Flag: 🇲🇱
-Task 4.js:18:15
-
-Flag: 🇫🇴
-Task 4.js:18:15
-
-Flag: 🇰🇿
-Task 4.js:18:15
-
-Flag: 🇵🇰
-Task 4.js:18:15
-
+Task-4.js:37 
+      Flag: 🇲🇻
+      
+Task-4.js:37 
+      Flag: 🇧🇱
+      
+Task-4.js:37 
+      Flag: 🇹🇹
+      
+Task-4.js:37 
+      Flag: 🇧🇬
+      
+Task-4.js:37 
+      Flag: 🇱🇷
+      
+Task-4.js:37 
+      Flag: 🇷🇺
+      
+Task-4.js:37 
+      Flag: 🇮🇲
+      
+Task-4.js:37 
+      Flag: 🇰🇭
+      
+Task-4.js:37 
+      Flag: 🇱🇧
+      
+Task-4.js:37 
+      Flag: 🇸🇱
+      
+Task-4.js:37 
+      Flag: 🇪🇭
+      
+Task-4.js:37 
+      Flag: 🇵🇫
+      
+Task-4.js:37 
+      Flag: 🇹🇨
+      
+Task-4.js:37 
+      Flag: 🇱🇦
+      
+Task-4.js:37 
+      Flag: 🇱🇾
+      
+Task-4.js:37 
+      Flag: 🇿🇼
+      
+Task-4.js:37 
+      Flag: 🇧🇮
+      
+Task-4.js:37 
+      Flag: 🇹🇩
+      
+Task-4.js:37 
+      Flag: 🇧🇼
+      
+Task-4.js:37 
+      Flag: 🇼🇫
+      
+Task-4.js:37 
+      Flag: 🇨🇩
+      
+Task-4.js:37 
+      Flag: 🇧🇹
+      
+Task-4.js:37 
+      Flag: 🇦🇿
+      
+Task-4.js:37 
+      Flag: 🇦🇪
+      
+Task-4.js:37 
+      Flag: 🇨🇿
+      
+Task-4.js:37 
+      Flag: 🇫🇰
+      
+Task-4.js:37 
+      Flag: 🇸🇲
+      
+Task-4.js:37 
+      Flag: 🇲🇲
+      
+Task-4.js:37 
+      Flag: 🇵🇷
+      
+Task-4.js:37 
+      Flag: 🇨🇲
+      
+Task-4.js:37 
+      Flag: 🇶🇦
+      
+Task-4.js:37 
+      Flag: 🇧🇯
+      
+Task-4.js:37 
+      Flag: 🇭🇺
+      
+Task-4.js:37 
+      Flag: 🇰🇬
+      
+Task-4.js:37 
+      Flag: 🇱🇹
+      
+Task-4.js:37 
+      Flag: 🇬🇲
+      
+Task-4.js:37 
+      Flag: 🇯🇵
+      
+Task-4.js:37 
+      Flag: 🇦🇶
+      
+Task-4.js:37 
+      Flag: 🇩🇪
+      
+Task-4.js:37 
+      Flag: 🇰🇾
+      
+Task-4.js:37 
+      Flag: 🇰🇿
+      
+Task-4.js:37 
+      Flag: 🇧🇳
+      
+Task-4.js:37 
+      Flag: 🇪🇸
+      
+Task-4.js:37 
+      Flag: 🇷🇪
+      
+Task-4.js:37 
+      Flag: 🇼🇸
+      
+Task-4.js:37 
+      Flag: 🇬🇵
+      
+Task-4.js:37 
+      Flag: 🇵🇾
+      
+Task-4.js:37 
+      Flag: 🇻🇪
+      
+Task-4.js:37 
+      Flag: 🇮🇷
+      
+Task-4.js:37 
+      Flag: 🇧🇭
+      
+Task-4.js:37 
+      Flag: 🇰🇷
+      
+Task-4.js:37 
+      Flag: 🇵🇦
+      
+Task-4.js:37 
+      Flag: 🇲🇵
+      
+Task-4.js:37 
+      Flag: 🇨🇦
+      
+Task-4.js:37 
+      Flag: 🇾🇪
+      
+Task-4.js:37 
+      Flag: 🇦🇹
+      
+Task-4.js:37 
+      Flag: 🇸🇷
+      
+Task-4.js:37 
+      Flag: 🇬🇱
+      
+Task-4.js:37 
+      Flag: 🇩🇲
+      
+Task-4.js:37 
+      Flag: 🇩🇰
+      
+Task-4.js:37 
+      Flag: 🇹🇼
+      
+Task-4.js:37 
+      Flag: 🇲🇴
+      
+Task-4.js:37 
+      Flag: 🇬🇸
+      
+Task-4.js:37 
+      Flag: 🇭🇲
+      
+Task-4.js:37 
+      Flag: 🇦🇲
+      
+Task-4.js:37 
+      Flag: 🇸🇻
+      
+Task-4.js:37 
+      Flag: 🇵🇭
+      
+Task-4.js:37 
+      Flag: 🇬🇳
+      
+Task-4.js:37 
+      Flag: 🇵🇬
+      
+Task-4.js:37 
+      Flag: 🇲🇬
+      
+Task-4.js:37 
+      Flag: 🇮🇹
+      
+Task-4.js:37 
+      Flag: 🇱🇨
+      
+Task-4.js:37 
+      Flag: 🇴🇲
+      
+Task-4.js:37 
+      Flag: 🇰🇮
+      
+Task-4.js:37 
+      Flag: 🇨🇫
+      
+Task-4.js:37 
+      Flag: 🇨🇻
+      
+Task-4.js:37 
+      Flag: 🇸🇳
+      
+Task-4.js:37 
+      Flag: 🇺🇿
+      
+Task-4.js:37 
+      Flag: 🇨🇨
+      
+Task-4.js:37 
+      Flag: 🇪🇪
+      
+Task-4.js:37 
+      Flag: 🇺🇲
+      
+Task-4.js:37 
+      Flag: 🇲🇪
+      
+Task-4.js:37 
+      Flag: 🇳🇬
+      
+Task-4.js:37 
+      Flag: 🇵🇳
+      
+Task-4.js:37 
+      Flag: 🇧🇴
+      
+Task-4.js:37 
+      Flag: 🇹🇷
+      
+Task-4.js:37 
+      Flag: 🇽🇰
+      
+Task-4.js:37 
+      Flag: 🇱🇺
+      
+Task-4.js:37 
+      Flag: 🇦🇴
+      
+Task-4.js:37 
+      Flag: 🇲🇿
+      
+Task-4.js:37 
+      Flag: 🇬🇭
+      
+Task-4.js:37 
+      Flag: 🇨🇰
+      
+Task-4.js:37 
+      Flag: 🇳🇨
+      
+Task-4.js:37 
+      Flag: 🇸🇨
+      
+Task-4.js:37 
+      Flag: 🇬🇩
+      
+Task-4.js:37 
+      Flag: 🇦🇺
+      
+Task-4.js:37 
+      Flag: 🇧🇫
+      
+Task-4.js:37 
+      Flag: 🇧🇩
+      
+Task-4.js:37 
+      Flag: 🇷🇴
+      
+Task-4.js:37 
+      Flag: 🇸🇮
+      
+Task-4.js:37 
+      Flag: 🇧🇻
+      
+Task-4.js:37 
+      Flag: 🇮🇩
+      
+Task-4.js:37 
+      Flag: 🇵🇲
+      
+Task-4.js:37 
+      Flag: 🇸🇧
+      
+Task-4.js:37 
+      Flag: 🇹🇴
+      
+Task-4.js:37 
+      Flag: 🇰🇵
+      
+Task-4.js:37 
+      Flag: 🇵🇼
+      
+Task-4.js:37 
+      Flag: 🇲🇹
+      
+Task-4.js:37 
+      Flag: 🇹🇿
+      
+Task-4.js:37 
+      Flag: 🇯🇴
+      
+Task-4.js:37 
+      Flag: 🇦🇱
+      
+Task-4.js:37 
+      Flag: 🇬🇶
+      
+Task-4.js:37 
+      Flag: 🇬🇹
+      
+Task-4.js:37 
+      Flag: 🇦🇸
+      
+Task-4.js:37 
+      Flag: 🇺🇸
+      
+Task-4.js:37 
+      Flag: 🇻🇺
+      
+Task-4.js:37 
+      Flag: 🇬🇬
+      
+Task-4.js:37 
+      Flag: 🇨🇽
+      
+Task-4.js:37 
+      Flag: 🇮🇸
+      
+Task-4.js:37 
+      Flag: 🇹🇻
+      
+Task-4.js:37 
+      Flag: 🇮🇴
+      
+Task-4.js:37 
+      Flag: 🇲🇶
+      
+Task-4.js:37 
+      Flag: 🇵🇹
+      
+Task-4.js:37 
+      Flag: 🇻🇬
+      
+Task-4.js:37 
+      Flag: 🇧🇪
+      
+Task-4.js:37 
+      Flag: 🇹🇯
+      
+Task-4.js:37 
+      Flag: 🇹🇭
+      
+Task-4.js:37 
+      Flag: 🇪🇬
+      
+Task-4.js:37 
+      Flag: 🇩🇿
+      
+Task-4.js:37 
+      Flag: 🇳🇷
+      
+Task-4.js:37 
+      Flag: 🇧🇧
+      
+Task-4.js:37 
+      Flag: 🇦🇩
+      
+Task-4.js:37 
+      Flag: 🇬🇮
+      
+Task-4.js:37 
+      Flag: 🇨🇮
+      
+Task-4.js:37 
+      Flag: 🇨🇼
+      
+Task-4.js:37 
+      Flag: 🇧🇦
+      
+Task-4.js:37 
+      Flag: 🇳🇺
+      
+Task-4.js:37 
+      Flag: 🇳🇱
+      
+Task-4.js:37 
+      Flag: 🇨🇴
+      
+Task-4.js:37 
+      Flag: 🇮🇳
+      
+Task-4.js:37 
+      Flag: 🇱🇰
+      
+Task-4.js:37 
+      Flag: 🇨🇳
+      
+Task-4.js:37 
+      Flag: 🇯🇲
+      
+Task-4.js:37 
+      Flag: 🇩🇴
+      
+Task-4.js:37 
+      Flag: 🇬🇷
+      
+Task-4.js:37 
+      Flag: 🇰🇳
+      
+Task-4.js:37 
+      Flag: 🇺🇦
+      
+Task-4.js:37 
+      Flag: 🇬🇦
+      
+Task-4.js:37 
+      Flag: 🇸🇰
+      
+Task-4.js:37 
+      Flag: 🇦🇷
+      
+Task-4.js:37 
+      Flag: 🇪🇹
+      
+Task-4.js:37 
+      Flag: 🇲🇩
+      
+Task-4.js:37 
+      Flag: 🇸🇬
+      
+Task-4.js:37 
+      Flag: 🇻🇨
+      
+Task-4.js:37 
+      Flag: 🇰🇼
+      
+Task-4.js:37 
+      Flag: 🇵🇸
+      
+Task-4.js:37 
+      Flag: 🇦🇮
+      
+Task-4.js:37 
+      Flag: 🇻🇳
+      
+Task-4.js:37 
+      Flag: 🇻🇮
+      
+Task-4.js:37 
+      Flag: 🇦🇫
+      
+Task-4.js:37 
+      Flag: 🇫🇲
+      
+Task-4.js:37 
+      Flag: 🇸🇿
+      
+Task-4.js:37 
+      Flag: 🇳🇵
+      
+Task-4.js:37 
+      Flag: 🇸🇴
+      
+Task-4.js:37 
+      Flag: 🇹🇱
+      
+Task-4.js:37 
+      Flag: 🇹🇰
+      
+Task-4.js:37 
+      Flag: 🇲🇺
+      
+Task-4.js:37 
+      Flag: 🇮🇱
+      
+Task-4.js:37 
+      Flag: 🇳🇪
+      
+Task-4.js:37 
+      Flag: 🇵🇱
+      
+Task-4.js:37 
+      Flag: 🇸🇯
+      
+Task-4.js:37 
+      Flag: 🇨🇱
+      
+Task-4.js:37 
+      Flag: 🇸🇾
+      
+Task-4.js:37 
+      Flag: 🇲🇨
+      
+Task-4.js:37 
+      Flag: 🇧🇾
+      
+Task-4.js:37 
+      Flag: 🇲🇼
+      
+Task-4.js:37 
+      Flag: 🇭🇹
+      
+Task-4.js:37 
+      Flag: 🇲🇽
+      
+Task-4.js:37 
+      Flag: 🇹🇬
+      
+Task-4.js:37 
+      Flag: 🇹🇲
+      
+Task-4.js:37 
+      Flag: 🇨🇭
+      
+Task-4.js:37 
+      Flag: 🇬🇾
+      
+Task-4.js:37 
+      Flag: 🇧🇸
+      
+Task-4.js:37 
+      Flag: 🇿🇲
+      
+Task-4.js:37 
+      Flag: 🇫🇷
+      
+Task-4.js:37 
+      Flag: undefined
+      
+Task-4.js:37 
+      Flag: 🇬🇧
+      
+Task-4.js:37 
+      Flag: 🇺🇾
+      
+Task-4.js:37 
+      Flag: 🇦🇼
+      
+Task-4.js:37 
+      Flag: 🇪🇷
+      
+Task-4.js:37 
+      Flag: 🇫🇴
+      
+Task-4.js:37 
+      Flag: 🇸🇩
+      
+Task-4.js:37 
+      Flag: 🇸🇸
+      
+Task-4.js:37 
+      Flag: 🇪🇨
+      
+Task-4.js:37 
+      Flag: 🇮🇪
+      
+Task-4.js:37 
+      Flag: 🇧🇷
+      
+Task-4.js:37 
+      Flag: 🇾🇹
+      
+Task-4.js:37 
+      Flag: 🇱🇮
+      
+Task-4.js:37 
+      Flag: 🇲🇫
+      
+Task-4.js:37 
+      Flag: 🇳🇿
+      
+Task-4.js:37 
+      Flag: 🇫🇮
+      
+Task-4.js:37 
+      Flag: 🇫🇯
+      
+Task-4.js:37 
+      Flag: 🇭🇳
+      
+Task-4.js:37 
+      Flag: 🇨🇾
+      
+Task-4.js:37 
+      Flag: 🇩🇯
+      
+Task-4.js:37 
+      Flag: 🇸🇽
+      
+Task-4.js:37 
+      Flag: 🇧🇲
+      
+Task-4.js:37 
+      Flag: 🇷🇼
+      
+Task-4.js:37 
+      Flag: 🇲🇭
+      
+Task-4.js:37 
+      Flag: 🇱🇸
+      
+Task-4.js:37 
+      Flag: 🇳🇫
+      
+Task-4.js:37 
+      Flag: 🇲🇳
+      
+Task-4.js:37 
+      Flag: 🇹🇳
+      
+Task-4.js:37 
+      Flag: 🇨🇬
+      
+Task-4.js:37 
+      Flag: 🇬🇺
+      
+Task-4.js:37 
+      Flag: 🇵🇰
+      
+Task-4.js:37 
+      Flag: 🇲🇷
+      
+Task-4.js:37 
+      Flag: 🇳🇦
+      
+Task-4.js:37 
+      Flag: 🇭🇰
+      
+Task-4.js:37 
+      Flag: 🇷🇸
+      
+Task-4.js:37 
+      Flag: 🇨🇺
+      
+Task-4.js:37 
+      Flag: 🇬🇫
+      
+Task-4.js:37 
+      Flag: 🇸🇹
+      
+Task-4.js:37 
+      Flag: 🇸🇭
+      
+Task-4.js:37 
+      Flag: 🇲🇦
+      
+Task-4.js:37 
+      Flag: 🇳🇮
+      
+Task-4.js:37 
+      Flag: 🇸🇦
+      
+Task-4.js:37 
+      Flag: 🇸🇪
+      
+Task-4.js:37 
+      Flag: 🇺🇬
+      
+Task-4.js:37 
+      Flag: 🇰🇲
+      
+Task-4.js:37 
+      Flag: 🇧🇿
+      
+Task-4.js:37 
+      Flag: 🇨🇷
+      
+Task-4.js:37 
+      Flag: 🇮🇶
+      
+Task-4.js:37 
+      Flag: 🇲🇸
+      
+Task-4.js:37 
+      Flag: 🇱🇻
+      
+Task-4.js:37 
+      Flag: 🇿🇦
+      
+Task-4.js:37 
+      Flag: 🇳🇴
+      
+Task-4.js:37 
+      Flag: 🇦🇬
+      
+Task-4.js:37 
+      Flag: 🇬🇪
+      
+Task-4.js:37 
+      Flag: 🇰🇪
+      
+Task-4.js:37 
+      Flag: 🇲🇱
+      
+Task-4.js:37 
+      Flag: 🇻🇦
+      
+Task-4.js:37 
+      Flag: 🇵🇪
+      
+Task-4.js:37 
+      Flag: 🇲🇰
+      
+Task-4.js:37 
+      Flag: 🇬🇼
+      
+Task-4.js:37 
+      Flag: 🇭🇷
+      
+Task-4.js:37 
+      Flag: 🇦🇽
+      
+Task-4.js:37 
+      Flag: 🇹🇫
+      
+Task-4.js:37 
+      Flag: 🇯🇪
+      
+Task-4.js:37 
+      Flag: 🇲🇾
+      
 3.use the same rest countries and print all countries names,regions,sub-region and populations?
 
 Ans:-
@@ -282,19 +814,16 @@ xhr.open("GET", "https://restcountries.com/v3/all");
 
 xhr.send();
 
-
 xhr.onload = function () {
-  
   if (xhr.status >= 200 && xhr.status < 300) {
-    //conver the data raw data to js notation
+
     var data = JSON.parse(xhr.response);
-    
 
     //Looping through the data
     for (var i = 0; i < data.length; i++) {
       var user = data[i];
       console.log(`
-      NAME: ${user.name}
+      NAME: ${user.name.common}
       REGION: ${user.region}
       SUBREGION: ${user.subregion}
       POPULATION: ${user.population}
@@ -303,440 +832,1507 @@ xhr.onload = function () {
   }
 };
 
+
+
 //output
 
-NAME: [object Object]
-      REGION: Americas
-      SUBREGION: Central America
-      POPULATION: 6624554
-      Task 4.js:18:15
-
-      NAME: [object Object]
-      REGION: Americas
-      SUBREGION: Caribbean
-      POPULATION: 13452
-      Task 4.js:18:15
-
-      NAME: [object Object]
+      Task-4.js:14 
+      NAME: Maldives
+      REGION: Asia
+      SUBREGION: Southern Asia
+      POPULATION: 540542
+      
+Task-4.js:14 
+      NAME: Saint Barthélemy
       REGION: Americas
       SUBREGION: Caribbean
       POPULATION: 4255
-      Task 4.js:18:15
-
-      NAME: [object Object]
-      REGION: Europe
-      SUBREGION: Northern Europe
-      POPULATION: 1901548
-      Task 4.js:18:15
-
-      NAME: [object Object]
-      REGION: Africa
-      SUBREGION: Middle Africa
-      POPULATION: 1402985
-      Task 4.js:18:15
-
-      NAME: [object Object]
-      REGION: Americas
-      SUBREGION: Central America
-      POPULATION: 9904608
-      Task 4.js:18:15
-
-      NAME: [object Object]
-      REGION: Asia
-      SUBREGION: Eastern Asia
-      POPULATION: 125836021
-      Task 4.js:18:15
-
-      NAME: [object Object]
-      REGION: Africa
-      SUBREGION: Western Africa
-      POPULATION: 5057677
-      Task 4.js:18:15
-
-      NAME: [object Object]
-      REGION: Americas
-      SUBREGION: Caribbean
-      POPULATION: 11326616
-      Task 4.js:18:15
-
-      NAME: [object Object]
-      REGION: Asia
-      SUBREGION: South-Eastern Asia
-      POPULATION: 32365998
-      Task 4.js:18:15
-
-      NAME: [object Object]
-      REGION: Americas
-      SUBREGION: Caribbean
-      POPULATION: 3194034
-      Task 4.js:18:15
-
-      NAME: [object Object]
-      REGION: Americas
-      SUBREGION: Central America
-      POPULATION: 6486201
-      Task 4.js:18:15
-
-      NAME: [object Object]
-      REGION: Oceania
-      SUBREGION: Polynesia
-      POPULATION: 1411
-      Task 4.js:18:15
-
-      NAME: [object Object]
-      REGION: Europe
-      SUBREGION: Northern Europe
-      POPULATION: 4994724
-      Task 4.js:18:15
-
-      NAME: [object Object]
-      REGION: Oceania
-      SUBREGION: Micronesia
-      POPULATION: 119446
-      Task 4.js:18:15
-
-      NAME: [object Object]
-      REGION: Oceania
-      SUBREGION: Australia and New Zealand
-      POPULATION: 5084300
-      Task 4.js:18:15
-
-      NAME: [object Object]
-      REGION: Americas
-      SUBREGION: Caribbean
-      POPULATION: 97928
-      Task 4.js:18:15
-
-      NAME: [object Object]
-      REGION: Africa
-      SUBREGION: Western Africa
-      POPULATION: 8278737
-      Task 4.js:18:15
-
-      NAME: [object Object]
-      REGION: Asia
-      SUBREGION: Central Asia
-      POPULATION: 34232050
-      Task 4.js:18:15
-
-      NAME: [object Object]
-      REGION: Asia
-      SUBREGION: Western Asia
-      POPULATION: 3714000
-      Task 4.js:18:15
-
-      NAME: [object Object]
-      REGION: Asia
-      SUBREGION: Central Asia
-      POPULATION: 6591600
-      Task 4.js:18:15
-
-      NAME: [object Object]
-      REGION: Asia
-      SUBREGION: South-Eastern Asia
-      POPULATION: 109581085
-      Task 4.js:18:15
-
-      NAME: [object Object]
-      REGION: Asia
-      SUBREGION: Eastern Asia
-      POPULATION: 25778815
-      Task 4.js:18:15
-
-      NAME: [object Object]
-      REGION: Oceania
-      SUBREGION: Polynesia
-      POPULATION: 11792
-      Task 4.js:18:15
-
-      NAME: [object Object]
-      REGION: Americas
-      SUBREGION: South America
-      POPULATION: 3473727
-      Task 4.js:18:15
-
-      NAME: [object Object]
-      REGION: Europe
-      SUBREGION: Eastern Europe
-      POPULATION: 9398861
-      Task 4.js:18:15
-
-      NAME: [object Object]
-      REGION: Europe
-      SUBREGION: Northern Europe
-      POPULATION: 10353442
-      Task 4.js:18:15
-
-      NAME: [object Object]
-      REGION: Africa
-      SUBREGION: Middle Africa
-      POPULATION: 11193729
-      Task 4.js:18:15
-
-      NAME: [object Object]
-      REGION: Asia
-      SUBREGION: Eastern Asia
-      POPULATION: 649342
-      Task 4.js:18:15
-
-      NAME: [object Object]
-      REGION: Africa
-      SUBREGION: Northern Africa
-      POPULATION: 43849269
-      Task 4.js:18:15
-
-      NAME: [object Object]
-      REGION: Europe
-      SUBREGION: Western Europe
-      POPULATION: 16655799
-      Task 4.js:18:15
-
-      NAME: [object Object]
-      REGION: Africa
-      SUBREGION: Middle Africa
-      POPULATION: 2225728
-      Task 4.js:18:15
-
-      NAME: [object Object]
-      REGION: Africa
-      SUBREGION: Western Africa
-      POPULATION: 26378275
-      Task 4.js:18:15
-
-      NAME: [object Object]
-      REGION: Africa
-      SUBREGION: Southern Africa
-      POPULATION: 59308690
-      Task 4.js:18:15
-
-      NAME: [object Object]
-      REGION: Asia
-      SUBREGION: Eastern Asia
-      POPULATION: 1402112000
-      Task 4.js:18:15
-
-      NAME: [object Object]
-      REGION: Africa
-      SUBREGION: Eastern Africa
-      POPULATION: 988002
-      Task 4.js:18:15
-
-      NAME: [object Object]
-      REGION: Asia
-      SUBREGION: Southern Asia
-      POPULATION: 83992953
-      Task 4.js:18:15
-
-      NAME: [object Object]
-      REGION: Oceania
-      SUBREGION: Micronesia
-      POPULATION: 10834
-      Task 4.js:18:15
-
-      NAME: [object Object]
-      REGION: Europe
-      SUBREGION: Northern Europe
-      POPULATION: 67215293
-      Task 4.js:18:15
-
-      NAME: [object Object]
+      
+Task-4.js:14 
+      NAME: Trinidad and Tobago
       REGION: Americas
       SUBREGION: Caribbean
       POPULATION: 1399491
-      Task 4.js:18:15
-
-      NAME: [object Object]
-      REGION: Oceania
-      SUBREGION: Australia and New Zealand
-      POPULATION: 2302
-      Task 4.js:18:15
-
-      NAME: [object Object]
-      REGION: Africa
-      SUBREGION: Middle Africa
-      POPULATION: 26545864
-      Task 4.js:18:15
-
-      NAME: [object Object]
-      REGION: Americas
-      SUBREGION: Caribbean
-      POPULATION: 112519
-      Task 4.js:18:15
-
-      NAME: [object Object]
+      
+Task-4.js:14 
+      NAME: Bulgaria
       REGION: Europe
       SUBREGION: Southeast Europe
-      POPULATION: 2077132
-      Task 4.js:18:15
-
-      NAME: [object Object]
-      REGION: Asia
-      SUBREGION: Western Asia
-      POPULATION: 1701583
-      Task 4.js:18:15
-
-      NAME: [object Object]
-      REGION: Europe
-      SUBREGION: Southern Europe
-      POPULATION: 47351567
-      Task 4.js:18:15
-
-      NAME: [object Object]
-      REGION: Oceania
-      SUBREGION: Australia and New Zealand
-      POPULATION: 25687041
-      Task 4.js:18:15
-
-      NAME: [object Object]
-      REGION: Asia
-      SUBREGION: Western Asia
-      POPULATION: 5106622
-      Task 4.js:18:15
-
-      NAME: [object Object]
-      REGION: Americas
-      SUBREGION: South America
-      POPULATION: 786559
-      Task 4.js:18:15
-
-      NAME: [object Object]
-      REGION: Asia
-      SUBREGION: Southern Asia
-      POPULATION: 21919000
-      Task 4.js:18:15
-
-      NAME: [object Object]
-      REGION: Americas
-      SUBREGION: Central America
-      POPULATION: 16858333
-      Task 4.js:18:15
-
-      NAME: [object Object]
-      REGION: Asia
-      SUBREGION: Western Asia
-      POPULATION: 10203140
-      Task 4.js:18:15
-
-      NAME: [object Object]
+      POPULATION: 6927288
+      
+Task-4.js:14 
+      NAME: Liberia
       REGION: Africa
       SUBREGION: Western Africa
-      POPULATION: 16743930
-      Task 4.js:18:15
-
-      NAME: [object Object]
+      POPULATION: 5057677
+      
+Task-4.js:14 
+      NAME: Russia
       REGION: Europe
-      SUBREGION: Western Europe
-      POPULATION: 67391582
-      Task 4.js:18:15
-
-      NAME: [object Object]
+      SUBREGION: Eastern Europe
+      POPULATION: 144104080
+      
+Task-4.js:14 
+      NAME: Isle of Man
+      REGION: Europe
+      SUBREGION: Northern Europe
+      POPULATION: 85032
+      
+Task-4.js:14 
+      NAME: Cambodia
+      REGION: Asia
+      SUBREGION: South-Eastern Asia
+      POPULATION: 16718971
+      
+Task-4.js:14 
+      NAME: Lebanon
+      REGION: Asia
+      SUBREGION: Western Asia
+      POPULATION: 6825442
+      
+Task-4.js:14 
+      NAME: Sierra Leone
+      REGION: Africa
+      SUBREGION: Western Africa
+      POPULATION: 7976985
+      
+Task-4.js:14 
+      NAME: Western Sahara
+      REGION: Africa
+      SUBREGION: Northern Africa
+      POPULATION: 510713
+      
+Task-4.js:14 
+      NAME: French Polynesia
+      REGION: Oceania
+      SUBREGION: Polynesia
+      POPULATION: 280904
+      
+Task-4.js:14 
+      NAME: Turks and Caicos Islands
+      REGION: Americas
+      SUBREGION: Caribbean
+      POPULATION: 38718
+      
+Task-4.js:14 
+      NAME: Laos
+      REGION: Asia
+      SUBREGION: South-Eastern Asia
+      POPULATION: 7275556
+      
+Task-4.js:14 
+      NAME: Libya
+      REGION: Africa
+      SUBREGION: Northern Africa
+      POPULATION: 6871287
+      
+Task-4.js:14 
+      NAME: Zimbabwe
+      REGION: Africa
+      SUBREGION: Southern Africa
+      POPULATION: 14862927
+      
+Task-4.js:14 
+      NAME: Burundi
+      REGION: Africa
+      SUBREGION: Eastern Africa
+      POPULATION: 11890781
+      
+Task-4.js:14 
+      NAME: Chad
+      REGION: Africa
+      SUBREGION: Middle Africa
+      POPULATION: 16425859
+      
+Task-4.js:14 
+      NAME: Botswana
+      REGION: Africa
+      SUBREGION: Southern Africa
+      POPULATION: 2351625
+      
+Task-4.js:14 
+      NAME: Wallis and Futuna
       REGION: Oceania
       SUBREGION: Polynesia
       POPULATION: 11750
-      Task 4.js:18:15
-
-      NAME: [object Object]
+      
+Task-4.js:14 
+      NAME: DR Congo
       REGION: Africa
-      SUBREGION: Eastern Africa
-      POPULATION: 18383956
-      Task 4.js:18:15
-
-      NAME: [object Object]
-      REGION: Americas
-      SUBREGION: South America
-      POPULATION: 212559409
-      Task 4.js:18:15
-
-      NAME: [object Object]
-      REGION: Americas
-      SUBREGION: Caribbean
-      POPULATION: 10847904
-      Task 4.js:18:15
-
-      NAME: [object Object]
-      REGION: Americas
-      SUBREGION: Caribbean
-      POPULATION: 53192
-      Task 4.js:18:15
-
-      NAME: [object Object]
-      REGION: Africa
-      SUBREGION: Eastern Africa
-      POPULATION: 5352000
-      Task 4.js:18:15
-
-      NAME: [object Object]
-      REGION: Antarctic
-      SUBREGION: undefined
-      POPULATION: 400
-      Task 4.js:18:15
-
-      NAME: [object Object]
-      REGION: Africa
-      SUBREGION: Eastern Africa
-      POPULATION: 114963583
-      Task 4.js:18:15
-
-      NAME: [object Object]
+      SUBREGION: Middle Africa
+      POPULATION: 89561404
+      
+Task-4.js:14 
+      NAME: Bhutan
+      REGION: Asia
+      SUBREGION: Southern Asia
+      POPULATION: 771612
+      
+Task-4.js:14 
+      NAME: Azerbaijan
       REGION: Asia
       SUBREGION: Western Asia
-      POPULATION: 9216900
-      Task 4.js:18:15
-
-      NAME: [object Object]
-      REGION: Africa
-      SUBREGION: Eastern Africa
-      POPULATION: 3000
-      Task 4.js:18:15
-
-      NAME: [object Object]
+      POPULATION: 10110116
+      
+Task-4.js:14 
+      NAME: United Arab Emirates
+      REGION: Asia
+      SUBREGION: Western Asia
+      POPULATION: 9890400
+      
+Task-4.js:14 
+      NAME: Czechia
       REGION: Europe
-      SUBREGION: Northern Europe
-      POPULATION: 100800
-      Task 4.js:18:15
-
-      NAME: [object Object]
+      SUBREGION: Central Europe
+      POPULATION: 10698896
+      
+Task-4.js:14 
+      NAME: Falkland Islands
       REGION: Americas
       SUBREGION: South America
-      POPULATION: 19116209
-      Task 4.js:18:15
-
-      NAME: [object Object]
-      REGION: Oceania
-      SUBREGION: Polynesia
-      POPULATION: 105697
-      Task 4.js:18:15
-
-      NAME: [object Object]
+      POPULATION: 2563
+      
+Task-4.js:14 
+      NAME: San Marino
+      REGION: Europe
+      SUBREGION: Southern Europe
+      POPULATION: 33938
+      
+Task-4.js:14 
+      NAME: Myanmar
+      REGION: Asia
+      SUBREGION: South-Eastern Asia
+      POPULATION: 54409794
+      
+Task-4.js:14 
+      NAME: Puerto Rico
+      REGION: Americas
+      SUBREGION: Caribbean
+      POPULATION: 3194034
+      
+Task-4.js:14 
+      NAME: Cameroon
+      REGION: Africa
+      SUBREGION: Middle Africa
+      POPULATION: 26545864
+      
+Task-4.js:14 
+      NAME: Qatar
+      REGION: Asia
+      SUBREGION: Western Asia
+      POPULATION: 2881060
+      
+Task-4.js:14 
+      NAME: Benin
       REGION: Africa
       SUBREGION: Western Africa
-      POPULATION: 20250834
-      Task 4.js:18:15
-
-      NAME: [object Object]
+      POPULATION: 12123198
+      
+Task-4.js:14 
+      NAME: Hungary
+      REGION: Europe
+      SUBREGION: Central Europe
+      POPULATION: 9749763
+      
+Task-4.js:14 
+      NAME: Kyrgyzstan
+      REGION: Asia
+      SUBREGION: Central Asia
+      POPULATION: 6591600
+      
+Task-4.js:14 
+      NAME: Lithuania
       REGION: Europe
       SUBREGION: Northern Europe
-      POPULATION: 48865
-      Task 4.js:18:15
-
-      NAME: [object Object]
+      POPULATION: 2794700
+      
+Task-4.js:14 
+      NAME: Gambia
+      REGION: Africa
+      SUBREGION: Western Africa
+      POPULATION: 2416664
+      
+Task-4.js:14 
+      NAME: Japan
+      REGION: Asia
+      SUBREGION: Eastern Asia
+      POPULATION: 125836021
+      
+Task-4.js:14 
+      NAME: Antarctica
+      REGION: Antarctic
+      SUBREGION: undefined
+      POPULATION: 1000
+      
+Task-4.js:14 
+      NAME: Germany
+      REGION: Europe
+      SUBREGION: Western Europe
+      POPULATION: 83240525
+      
+Task-4.js:14 
+      NAME: Cayman Islands
+      REGION: Americas
+      SUBREGION: Caribbean
+      POPULATION: 65720
+      
+Task-4.js:14 
+      NAME: Kazakhstan
       REGION: Asia
       SUBREGION: Central Asia
       POPULATION: 18754440
-      Task 4.js:18:15
-
-      NAME: [object Object]
+      
+Task-4.js:14 
+      NAME: Brunei
+      REGION: Asia
+      SUBREGION: South-Eastern Asia
+      POPULATION: 437483
+      
+Task-4.js:14 
+      NAME: Spain
+      REGION: Europe
+      SUBREGION: Southern Europe
+      POPULATION: 47351567
+      
+Task-4.js:14 
+      NAME: Réunion
+      REGION: Africa
+      SUBREGION: Eastern Africa
+      POPULATION: 840974
+      
+Task-4.js:14 
+      NAME: Samoa
+      REGION: Oceania
+      SUBREGION: Polynesia
+      POPULATION: 198410
+      
+Task-4.js:14 
+      NAME: Guadeloupe
+      REGION: Americas
+      SUBREGION: Caribbean
+      POPULATION: 400132
+      
+Task-4.js:14 
+      NAME: Paraguay
+      REGION: Americas
+      SUBREGION: South America
+      POPULATION: 7132530
+      
+Task-4.js:14 
+      NAME: Venezuela
+      REGION: Americas
+      SUBREGION: South America
+      POPULATION: 28435943
+      
+Task-4.js:14 
+      NAME: Iran
+      REGION: Asia
+      SUBREGION: Southern Asia
+      POPULATION: 83992953
+      
+Task-4.js:14 
+      NAME: Bahrain
+      REGION: Asia
+      SUBREGION: Western Asia
+      POPULATION: 1701583
+      
+Task-4.js:14 
+      NAME: South Korea
+      REGION: Asia
+      SUBREGION: Eastern Asia
+      POPULATION: 51780579
+      
+Task-4.js:14 
+      NAME: Panama
+      REGION: Americas
+      SUBREGION: Central America
+      POPULATION: 4314768
+      
+Task-4.js:14 
+      NAME: Northern Mariana Islands
+      REGION: Oceania
+      SUBREGION: Micronesia
+      POPULATION: 57557
+      
+Task-4.js:14 
+      NAME: Canada
+      REGION: Americas
+      SUBREGION: North America
+      POPULATION: 38005238
+      
+Task-4.js:14 
+      NAME: Yemen
+      REGION: Asia
+      SUBREGION: Western Asia
+      POPULATION: 29825968
+      
+Task-4.js:14 
+      NAME: Austria
+      REGION: Europe
+      SUBREGION: Central Europe
+      POPULATION: 8917205
+      
+Task-4.js:14 
+      NAME: Suriname
+      REGION: Americas
+      SUBREGION: South America
+      POPULATION: 586634
+      
+Task-4.js:14 
+      NAME: Greenland
+      REGION: Americas
+      SUBREGION: North America
+      POPULATION: 56367
+      
+Task-4.js:14 
+      NAME: Dominica
+      REGION: Americas
+      SUBREGION: Caribbean
+      POPULATION: 71991
+      
+Task-4.js:14 
+      NAME: Denmark
+      REGION: Europe
+      SUBREGION: Northern Europe
+      POPULATION: 5831404
+      
+Task-4.js:14 
+      NAME: Taiwan
+      REGION: Asia
+      SUBREGION: Eastern Asia
+      POPULATION: 23503349
+      
+Task-4.js:14 
+      NAME: Macau
+      REGION: Asia
+      SUBREGION: Eastern Asia
+      POPULATION: 649342
+      
+Task-4.js:14 
+      NAME: South Georgia
+      REGION: Antarctic
+      SUBREGION: undefined
+      POPULATION: 30
+      
+Task-4.js:14 
+      NAME: Heard Island and McDonald Islands
+      REGION: Antarctic
+      SUBREGION: undefined
+      POPULATION: 0
+      
+Task-4.js:14 
+      NAME: Armenia
+      REGION: Asia
+      SUBREGION: Western Asia
+      POPULATION: 2963234
+      
+Task-4.js:14 
+      NAME: El Salvador
+      REGION: Americas
+      SUBREGION: Central America
+      POPULATION: 6486201
+      
+Task-4.js:14 
+      NAME: Philippines
+      REGION: Asia
+      SUBREGION: South-Eastern Asia
+      POPULATION: 109581085
+      
+Task-4.js:14 
+      NAME: Guinea
+      REGION: Africa
+      SUBREGION: Western Africa
+      POPULATION: 13132792
+      
+Task-4.js:14 
+      NAME: Papua New Guinea
+      REGION: Oceania
+      SUBREGION: Melanesia
+      POPULATION: 8947027
+      
+Task-4.js:14 
+      NAME: Madagascar
+      REGION: Africa
+      SUBREGION: Eastern Africa
+      POPULATION: 27691019
+      
+Task-4.js:14 
+      NAME: Italy
+      REGION: Europe
+      SUBREGION: Southern Europe
+      POPULATION: 59554023
+      
+Task-4.js:14 
+      NAME: Saint Lucia
+      REGION: Americas
+      SUBREGION: Caribbean
+      POPULATION: 183629
+      
+Task-4.js:14 
+      NAME: Oman
+      REGION: Asia
+      SUBREGION: Western Asia
+      POPULATION: 5106622
+      
+Task-4.js:14 
+      NAME: Kiribati
+      REGION: Oceania
+      SUBREGION: Micronesia
+      POPULATION: 119446
+      
+Task-4.js:14 
+      NAME: Central African Republic
+      REGION: Africa
+      SUBREGION: Middle Africa
+      POPULATION: 4829764
+      
+Task-4.js:14 
+      NAME: Cape Verde
+      REGION: Africa
+      SUBREGION: Western Africa
+      POPULATION: 555988
+      
+Task-4.js:14 
+      NAME: Senegal
+      REGION: Africa
+      SUBREGION: Western Africa
+      POPULATION: 16743930
+      
+Task-4.js:14 
+      NAME: Uzbekistan
+      REGION: Asia
+      SUBREGION: Central Asia
+      POPULATION: 34232050
+      
+Task-4.js:14 
+      NAME: Cocos (Keeling) Islands
+      REGION: Oceania
+      SUBREGION: Australia and New Zealand
+      POPULATION: 544
+      
+Task-4.js:14 
+      NAME: Estonia
+      REGION: Europe
+      SUBREGION: Northern Europe
+      POPULATION: 1331057
+      
+Task-4.js:14 
+      NAME: United States Minor Outlying Islands
+      REGION: Americas
+      SUBREGION: North America
+      POPULATION: 300
+      
+Task-4.js:14 
+      NAME: Montenegro
+      REGION: Europe
+      SUBREGION: Southeast Europe
+      POPULATION: 621718
+      
+Task-4.js:14 
+      NAME: Nigeria
+      REGION: Africa
+      SUBREGION: Western Africa
+      POPULATION: 206139587
+      
+Task-4.js:14 
+      NAME: Pitcairn Islands
+      REGION: Oceania
+      SUBREGION: Polynesia
+      POPULATION: 56
+      
+Task-4.js:14 
+      NAME: Bolivia
+      REGION: Americas
+      SUBREGION: South America
+      POPULATION: 11673029
+      
+Task-4.js:14 
+      NAME: Turkey
+      REGION: Asia
+      SUBREGION: Western Asia
+      POPULATION: 84339067
+      
+Task-4.js:14 
+      NAME: Kosovo
+      REGION: Europe
+      SUBREGION: Southeast Europe
+      POPULATION: 1775378
+      
+Task-4.js:14 
+      NAME: Luxembourg
+      REGION: Europe
+      SUBREGION: Western Europe
+      POPULATION: 632275
+      
+Task-4.js:14 
+      NAME: Angola
+      REGION: Africa
+      SUBREGION: Middle Africa
+      POPULATION: 32866268
+      
+Task-4.js:14 
+      NAME: Mozambique
+      REGION: Africa
+      SUBREGION: Eastern Africa
+      POPULATION: 31255435
+      
+Task-4.js:14 
+      NAME: Ghana
+      REGION: Africa
+      SUBREGION: Western Africa
+      POPULATION: 31072945
+      
+Task-4.js:14 
+      NAME: Cook Islands
+      REGION: Oceania
+      SUBREGION: Polynesia
+      POPULATION: 18100
+      
+Task-4.js:14 
+      NAME: New Caledonia
+      REGION: Oceania
+      SUBREGION: Melanesia
+      POPULATION: 271960
+      
+Task-4.js:14 
+      NAME: Seychelles
+      REGION: Africa
+      SUBREGION: Eastern Africa
+      POPULATION: 98462
+      
+Task-4.js:14 
+      NAME: Grenada
+      REGION: Americas
+      SUBREGION: Caribbean
+      POPULATION: 112519
+      
+Task-4.js:14 
+      NAME: Australia
+      REGION: Oceania
+      SUBREGION: Australia and New Zealand
+      POPULATION: 25687041
+      
+Task-4.js:14 
+      NAME: Burkina Faso
+      REGION: Africa
+      SUBREGION: Western Africa
+      POPULATION: 20903278
+      
+Task-4.js:14 
+      NAME: Bangladesh
+      REGION: Asia
+      SUBREGION: Southern Asia
+      POPULATION: 164689383
+      
+Task-4.js:14 
+      NAME: Romania
+      REGION: Europe
+      SUBREGION: Southeast Europe
+      POPULATION: 19286123
+      
+Task-4.js:14 
+      NAME: Slovenia
+      REGION: Europe
+      SUBREGION: Central Europe
+      POPULATION: 2100126
+      
+Task-4.js:14 
+      NAME: Bouvet Island
+      REGION: Antarctic
+      SUBREGION: undefined
+      POPULATION: 0
+      
+Task-4.js:14 
+      NAME: Indonesia
+      REGION: Asia
+      SUBREGION: South-Eastern Asia
+      POPULATION: 273523621
+      
+Task-4.js:14 
+      NAME: Saint Pierre and Miquelon
+      REGION: Americas
+      SUBREGION: North America
+      POPULATION: 6069
+      
+Task-4.js:14 
+      NAME: Solomon Islands
+      REGION: Oceania
+      SUBREGION: Melanesia
+      POPULATION: 686878
+      
+Task-4.js:14 
+      NAME: Tonga
+      REGION: Oceania
+      SUBREGION: Polynesia
+      POPULATION: 105697
+      
+Task-4.js:14 
+      NAME: North Korea
+      REGION: Asia
+      SUBREGION: Eastern Asia
+      POPULATION: 25778815
+      
+Task-4.js:14 
+      NAME: Palau
+      REGION: Oceania
+      SUBREGION: Micronesia
+      POPULATION: 18092
+      
+Task-4.js:14 
+      NAME: Malta
+      REGION: Europe
+      SUBREGION: Southern Europe
+      POPULATION: 525285
+      
+Task-4.js:14 
+      NAME: Tanzania
+      REGION: Africa
+      SUBREGION: Eastern Africa
+      POPULATION: 59734213
+      
+Task-4.js:14 
+      NAME: Jordan
+      REGION: Asia
+      SUBREGION: Western Asia
+      POPULATION: 10203140
+      
+Task-4.js:14 
+      NAME: Albania
+      REGION: Europe
+      SUBREGION: Southeast Europe
+      POPULATION: 2837743
+      
+Task-4.js:14 
+      NAME: Equatorial Guinea
+      REGION: Africa
+      SUBREGION: Middle Africa
+      POPULATION: 1402985
+      
+Task-4.js:14 
+      NAME: Guatemala
+      REGION: Americas
+      SUBREGION: Central America
+      POPULATION: 16858333
+      
+Task-4.js:14 
+      NAME: American Samoa
+      REGION: Oceania
+      SUBREGION: Polynesia
+      POPULATION: 55197
+      
+Task-4.js:14 
+      NAME: United States
+      REGION: Americas
+      SUBREGION: North America
+      POPULATION: 329484123
+      
+Task-4.js:14 
+      NAME: Vanuatu
+      REGION: Oceania
+      SUBREGION: Melanesia
+      POPULATION: 307150
+      
+Task-4.js:14 
+      NAME: Guernsey
+      REGION: Europe
+      SUBREGION: Northern Europe
+      POPULATION: 62999
+      
+Task-4.js:14 
+      NAME: Christmas Island
+      REGION: Oceania
+      SUBREGION: Australia and New Zealand
+      POPULATION: 2072
+      
+Task-4.js:14 
+      NAME: Iceland
+      REGION: Europe
+      SUBREGION: Northern Europe
+      POPULATION: 366425
+      
+Task-4.js:14 
+      NAME: Tuvalu
+      REGION: Oceania
+      SUBREGION: Polynesia
+      POPULATION: 11792
+      
+Task-4.js:14 
+      NAME: British Indian Ocean Territory
+      REGION: Africa
+      SUBREGION: Eastern Africa
+      POPULATION: 3000
+      
+Task-4.js:14 
+      NAME: Martinique
+      REGION: Americas
+      SUBREGION: Caribbean
+      POPULATION: 378243
+      
+Task-4.js:14 
+      NAME: Portugal
+      REGION: Europe
+      SUBREGION: Southern Europe
+      POPULATION: 10305564
+      
+Task-4.js:14 
+      NAME: British Virgin Islands
+      REGION: Americas
+      SUBREGION: Caribbean
+      POPULATION: 30237
+      
+Task-4.js:14 
+      NAME: Belgium
+      REGION: Europe
+      SUBREGION: Western Europe
+      POPULATION: 11555997
+      
+Task-4.js:14 
+      NAME: Tajikistan
+      REGION: Asia
+      SUBREGION: Central Asia
+      POPULATION: 9537642
+      
+Task-4.js:14 
+      NAME: Thailand
+      REGION: Asia
+      SUBREGION: South-Eastern Asia
+      POPULATION: 69799978
+      
+Task-4.js:14 
+      NAME: Egypt
+      REGION: Africa
+      SUBREGION: Northern Africa
+      POPULATION: 102334403
+      
+Task-4.js:14 
+      NAME: Algeria
+      REGION: Africa
+      SUBREGION: Northern Africa
+      POPULATION: 44700000
+      
+Task-4.js:14 
+      NAME: Nauru
+      REGION: Oceania
+      SUBREGION: Micronesia
+      POPULATION: 10834
+      
+Task-4.js:14 
+      NAME: Barbados
+      REGION: Americas
+      SUBREGION: Caribbean
+      POPULATION: 287371
+      
+Task-4.js:14 
+      NAME: Andorra
+      REGION: Europe
+      SUBREGION: Southern Europe
+      POPULATION: 77265
+      
+Task-4.js:14 
+      NAME: Gibraltar
+      REGION: Europe
+      SUBREGION: Southern Europe
+      POPULATION: 33691
+      
+Task-4.js:14 
+      NAME: Ivory Coast
+      REGION: Africa
+      SUBREGION: Western Africa
+      POPULATION: 26378275
+      
+Task-4.js:14 
+      NAME: Curaçao
+      REGION: Americas
+      SUBREGION: Caribbean
+      POPULATION: 155014
+      
+Task-4.js:14 
+      NAME: Bosnia and Herzegovina
+      REGION: Europe
+      SUBREGION: Southeast Europe
+      POPULATION: 3280815
+      
+Task-4.js:14 
+      NAME: Niue
+      REGION: Oceania
+      SUBREGION: Polynesia
+      POPULATION: 1470
+      
+Task-4.js:14 
+      NAME: Netherlands
+      REGION: Europe
+      SUBREGION: Western Europe
+      POPULATION: 16655799
+      
+Task-4.js:14 
+      NAME: Colombia
+      REGION: Americas
+      SUBREGION: South America
+      POPULATION: 50882884
+      
+Task-4.js:14 
+      NAME: India
+      REGION: Asia
+      SUBREGION: Southern Asia
+      POPULATION: 1380004385
+      
+Task-4.js:14 
+      NAME: Sri Lanka
+      REGION: Asia
+      SUBREGION: Southern Asia
+      POPULATION: 21919000
+      
+Task-4.js:14 
+      NAME: China
+      REGION: Asia
+      SUBREGION: Eastern Asia
+      POPULATION: 1402112000
+      
+Task-4.js:14 
+      NAME: Jamaica
+      REGION: Americas
+      SUBREGION: Caribbean
+      POPULATION: 2961161
+      
+Task-4.js:14 
+      NAME: Dominican Republic
+      REGION: Americas
+      SUBREGION: Caribbean
+      POPULATION: 10847904
+      
+Task-4.js:14 
+      NAME: Greece
+      REGION: Europe
+      SUBREGION: Southern Europe
+      POPULATION: 10715549
+      
+Task-4.js:14 
+      NAME: Saint Kitts and Nevis
+      REGION: Americas
+      SUBREGION: Caribbean
+      POPULATION: 53192
+      
+Task-4.js:14 
+      NAME: Ukraine
+      REGION: Europe
+      SUBREGION: Eastern Europe
+      POPULATION: 44134693
+      
+Task-4.js:14 
+      NAME: Gabon
+      REGION: Africa
+      SUBREGION: Middle Africa
+      POPULATION: 2225728
+      
+Task-4.js:14 
+      NAME: Slovakia
+      REGION: Europe
+      SUBREGION: Central Europe
+      POPULATION: 5458827
+      
+Task-4.js:14 
+      NAME: Argentina
+      REGION: Americas
+      SUBREGION: South America
+      POPULATION: 45376763
+      
+Task-4.js:14 
+      NAME: Ethiopia
+      REGION: Africa
+      SUBREGION: Eastern Africa
+      POPULATION: 114963583
+      
+Task-4.js:14 
+      NAME: Moldova
+      REGION: Europe
+      SUBREGION: Eastern Europe
+      POPULATION: 2617820
+      
+Task-4.js:14 
+      NAME: Singapore
+      REGION: Asia
+      SUBREGION: South-Eastern Asia
+      POPULATION: 5685807
+      
+Task-4.js:14 
+      NAME: Saint Vincent and the Grenadines
+      REGION: Americas
+      SUBREGION: Caribbean
+      POPULATION: 110947
+      
+Task-4.js:14 
+      NAME: Kuwait
+      REGION: Asia
+      SUBREGION: Western Asia
+      POPULATION: 4270563
+      
+Task-4.js:14 
+      NAME: Palestine
+      REGION: Asia
+      SUBREGION: Western Asia
+      POPULATION: 4803269
+      
+Task-4.js:14 
+      NAME: Anguilla
+      REGION: Americas
+      SUBREGION: Caribbean
+      POPULATION: 13452
+      
+Task-4.js:14 
+      NAME: Vietnam
+      REGION: Asia
+      SUBREGION: South-Eastern Asia
+      POPULATION: 97338583
+      
+Task-4.js:14 
+      NAME: United States Virgin Islands
+      REGION: Americas
+      SUBREGION: Caribbean
+      POPULATION: 106290
+      
+Task-4.js:14 
+      NAME: Afghanistan
+      REGION: Asia
+      SUBREGION: Southern Asia
+      POPULATION: 40218234
+      
+Task-4.js:14 
+      NAME: Micronesia
+      REGION: Oceania
+      SUBREGION: Micronesia
+      POPULATION: 115021
+      
+Task-4.js:14 
+      NAME: Eswatini
+      REGION: Africa
+      SUBREGION: Southern Africa
+      POPULATION: 1160164
+      
+Task-4.js:14 
+      NAME: Nepal
+      REGION: Asia
+      SUBREGION: Southern Asia
+      POPULATION: 29136808
+      
+Task-4.js:14 
+      NAME: Somalia
+      REGION: Africa
+      SUBREGION: Eastern Africa
+      POPULATION: 15893219
+      
+Task-4.js:14 
+      NAME: Timor-Leste
+      REGION: Asia
+      SUBREGION: South-Eastern Asia
+      POPULATION: 1318442
+      
+Task-4.js:14 
+      NAME: Tokelau
+      REGION: Oceania
+      SUBREGION: Polynesia
+      POPULATION: 1411
+      
+Task-4.js:14 
+      NAME: Mauritius
+      REGION: Africa
+      SUBREGION: Eastern Africa
+      POPULATION: 1265740
+      
+Task-4.js:14 
+      NAME: Israel
+      REGION: Asia
+      SUBREGION: Western Asia
+      POPULATION: 9216900
+      
+Task-4.js:14 
+      NAME: Niger
+      REGION: Africa
+      SUBREGION: Western Africa
+      POPULATION: 24206636
+      
+Task-4.js:14 
+      NAME: Poland
+      REGION: Europe
+      SUBREGION: Central Europe
+      POPULATION: 37950802
+      
+Task-4.js:14 
+      NAME: Svalbard and Jan Mayen
+      REGION: Europe
+      SUBREGION: Northern Europe
+      POPULATION: 2562
+      
+Task-4.js:14 
+      NAME: Chile
+      REGION: Americas
+      SUBREGION: South America
+      POPULATION: 19116209
+      
+Task-4.js:14 
+      NAME: Syria
+      REGION: Asia
+      SUBREGION: Western Asia
+      POPULATION: 17500657
+      
+Task-4.js:14 
+      NAME: Monaco
+      REGION: Europe
+      SUBREGION: Western Europe
+      POPULATION: 39244
+      
+Task-4.js:14 
+      NAME: Belarus
+      REGION: Europe
+      SUBREGION: Eastern Europe
+      POPULATION: 9398861
+      
+Task-4.js:14 
+      NAME: Malawi
+      REGION: Africa
+      SUBREGION: Eastern Africa
+      POPULATION: 19129955
+      
+Task-4.js:14 
+      NAME: Haiti
+      REGION: Americas
+      SUBREGION: Caribbean
+      POPULATION: 11402533
+      
+Task-4.js:14 
+      NAME: Mexico
+      REGION: Americas
+      SUBREGION: North America
+      POPULATION: 128932753
+      
+Task-4.js:14 
+      NAME: Togo
+      REGION: Africa
+      SUBREGION: Western Africa
+      POPULATION: 8278737
+      
+Task-4.js:14 
+      NAME: Turkmenistan
+      REGION: Asia
+      SUBREGION: Central Asia
+      POPULATION: 6031187
+      
+Task-4.js:14 
+      NAME: Switzerland
+      REGION: Europe
+      SUBREGION: Western Europe
+      POPULATION: 8654622
+      
+Task-4.js:14 
+      NAME: Guyana
+      REGION: Americas
+      SUBREGION: South America
+      POPULATION: 786559
+      
+Task-4.js:14 
+      NAME: Bahamas
+      REGION: Americas
+      SUBREGION: Caribbean
+      POPULATION: 393248
+      
+Task-4.js:14 
+      NAME: Zambia
+      REGION: Africa
+      SUBREGION: Eastern Africa
+      POPULATION: 18383956
+      
+Task-4.js:14 
+      NAME: France
+      REGION: Europe
+      SUBREGION: Western Europe
+      POPULATION: 67391582
+      
+Task-4.js:14 
+      NAME: Caribbean Netherlands
+      REGION: Americas
+      SUBREGION: Caribbean
+      POPULATION: 25987
+      
+Task-4.js:14 
+      NAME: United Kingdom
+      REGION: Europe
+      SUBREGION: Northern Europe
+      POPULATION: 67215293
+      
+Task-4.js:14 
+      NAME: Uruguay
+      REGION: Americas
+      SUBREGION: South America
+      POPULATION: 3473727
+      
+Task-4.js:14 
+      NAME: Aruba
+      REGION: Americas
+      SUBREGION: Caribbean
+      POPULATION: 106766
+      
+Task-4.js:14 
+      NAME: Eritrea
+      REGION: Africa
+      SUBREGION: Eastern Africa
+      POPULATION: 5352000
+      
+Task-4.js:14 
+      NAME: Faroe Islands
+      REGION: Europe
+      SUBREGION: Northern Europe
+      POPULATION: 48865
+      
+Task-4.js:14 
+      NAME: Sudan
+      REGION: Africa
+      SUBREGION: Northern Africa
+      POPULATION: 43849269
+      
+Task-4.js:14 
+      NAME: South Sudan
+      REGION: Africa
+      SUBREGION: Middle Africa
+      POPULATION: 11193729
+      
+Task-4.js:14 
+      NAME: Ecuador
+      REGION: Americas
+      SUBREGION: South America
+      POPULATION: 17643060
+      
+Task-4.js:14 
+      NAME: Ireland
+      REGION: Europe
+      SUBREGION: Northern Europe
+      POPULATION: 4994724
+      
+Task-4.js:14 
+      NAME: Brazil
+      REGION: Americas
+      SUBREGION: South America
+      POPULATION: 212559409
+      
+Task-4.js:14 
+      NAME: Mayotte
+      REGION: Africa
+      SUBREGION: Eastern Africa
+      POPULATION: 226915
+      
+Task-4.js:14 
+      NAME: Liechtenstein
+      REGION: Europe
+      SUBREGION: Western Europe
+      POPULATION: 38137
+      
+Task-4.js:14 
+      NAME: Saint Martin
+      REGION: Americas
+      SUBREGION: Caribbean
+      POPULATION: 38659
+      
+Task-4.js:14 
+      NAME: New Zealand
+      REGION: Oceania
+      SUBREGION: Australia and New Zealand
+      POPULATION: 5084300
+      
+Task-4.js:14 
+      NAME: Finland
+      REGION: Europe
+      SUBREGION: Northern Europe
+      POPULATION: 5530719
+      
+Task-4.js:14 
+      NAME: Fiji
+      REGION: Oceania
+      SUBREGION: Melanesia
+      POPULATION: 896444
+      
+Task-4.js:14 
+      NAME: Honduras
+      REGION: Americas
+      SUBREGION: Central America
+      POPULATION: 9904608
+      
+Task-4.js:14 
+      NAME: Cyprus
+      REGION: Europe
+      SUBREGION: Southern Europe
+      POPULATION: 1207361
+      
+Task-4.js:14 
+      NAME: Djibouti
+      REGION: Africa
+      SUBREGION: Eastern Africa
+      POPULATION: 988002
+      
+Task-4.js:14 
+      NAME: Sint Maarten
+      REGION: Americas
+      SUBREGION: Caribbean
+      POPULATION: 40812
+      
+Task-4.js:14 
+      NAME: Bermuda
+      REGION: Americas
+      SUBREGION: North America
+      POPULATION: 63903
+      
+Task-4.js:14 
+      NAME: Rwanda
+      REGION: Africa
+      SUBREGION: Eastern Africa
+      POPULATION: 12952209
+      
+Task-4.js:14 
+      NAME: Marshall Islands
+      REGION: Oceania
+      SUBREGION: Micronesia
+      POPULATION: 59194
+      
+Task-4.js:14 
+      NAME: Lesotho
+      REGION: Africa
+      SUBREGION: Southern Africa
+      POPULATION: 2142252
+      
+Task-4.js:14 
+      NAME: Norfolk Island
+      REGION: Oceania
+      SUBREGION: Australia and New Zealand
+      POPULATION: 2302
+      
+Task-4.js:14 
+      NAME: Mongolia
+      REGION: Asia
+      SUBREGION: Eastern Asia
+      POPULATION: 3278292
+      
+Task-4.js:14 
+      NAME: Tunisia
+      REGION: Africa
+      SUBREGION: Northern Africa
+      POPULATION: 11818618
+      
+Task-4.js:14 
+      NAME: Republic of the Congo
+      REGION: Africa
+      SUBREGION: Middle Africa
+      POPULATION: 89561404
+      
+Task-4.js:14 
+      NAME: Guam
+      REGION: Oceania
+      SUBREGION: Micronesia
+      POPULATION: 168783
+      
+Task-4.js:14 
+      NAME: Pakistan
       REGION: Asia
       SUBREGION: Southern Asia
       POPULATION: 220892331
-      Task 4.js:18:15
-
-
-
-
-
-
-
-
-
-
+      
+Task-4.js:14 
+      NAME: Mauritania
+      REGION: Africa
+      SUBREGION: Western Africa
+      POPULATION: 4649660
+      
+Task-4.js:14 
+      NAME: Namibia
+      REGION: Africa
+      SUBREGION: Southern Africa
+      POPULATION: 2540916
+      
+Task-4.js:14 
+      NAME: Hong Kong
+      REGION: Asia
+      SUBREGION: Eastern Asia
+      POPULATION: 7500700
+      
+Task-4.js:14 
+      NAME: Serbia
+      REGION: Europe
+      SUBREGION: Southeast Europe
+      POPULATION: 6908224
+      
+Task-4.js:14 
+      NAME: Cuba
+      REGION: Americas
+      SUBREGION: Caribbean
+      POPULATION: 11326616
+      
+Task-4.js:14 
+      NAME: French Guiana
+      REGION: Americas
+      SUBREGION: South America
+      POPULATION: 254541
+      
+Task-4.js:14 
+      NAME: São Tomé and Príncipe
+      REGION: Africa
+      SUBREGION: Middle Africa
+      POPULATION: 219161
+      
+Task-4.js:14 
+      NAME: Saint Helena, Ascension and Tristan da Cunha
+      REGION: Africa
+      SUBREGION: Western Africa
+      POPULATION: 53192
+      
+Task-4.js:14 
+      NAME: Morocco
+      REGION: Africa
+      SUBREGION: Northern Africa
+      POPULATION: 36910558
+      
+Task-4.js:14 
+      NAME: Nicaragua
+      REGION: Americas
+      SUBREGION: Central America
+      POPULATION: 6624554
+      
+Task-4.js:14 
+      NAME: Saudi Arabia
+      REGION: Asia
+      SUBREGION: Western Asia
+      POPULATION: 34813867
+      
+Task-4.js:14 
+      NAME: Sweden
+      REGION: Europe
+      SUBREGION: Northern Europe
+      POPULATION: 10353442
+      
+Task-4.js:14 
+      NAME: Uganda
+      REGION: Africa
+      SUBREGION: Eastern Africa
+      POPULATION: 45741000
+      
+Task-4.js:14 
+      NAME: Comoros
+      REGION: Africa
+      SUBREGION: Eastern Africa
+      POPULATION: 869595
+      
+Task-4.js:14 
+      NAME: Belize
+      REGION: Americas
+      SUBREGION: Central America
+      POPULATION: 397621
+      
+Task-4.js:14 
+      NAME: Costa Rica
+      REGION: Americas
+      SUBREGION: Central America
+      POPULATION: 5094114
+      
+Task-4.js:14 
+      NAME: Iraq
+      REGION: Asia
+      SUBREGION: Western Asia
+      POPULATION: 40222503
+      
+Task-4.js:14 
+      NAME: Montserrat
+      REGION: Americas
+      SUBREGION: Caribbean
+      POPULATION: 4922
+      
+Task-4.js:14 
+      NAME: Latvia
+      REGION: Europe
+      SUBREGION: Northern Europe
+      POPULATION: 1901548
+      
+Task-4.js:14 
+      NAME: South Africa
+      REGION: Africa
+      SUBREGION: Southern Africa
+      POPULATION: 59308690
+      
+Task-4.js:14 
+      NAME: Norway
+      REGION: Europe
+      SUBREGION: Northern Europe
+      POPULATION: 5379475
+      
+Task-4.js:14 
+      NAME: Antigua and Barbuda
+      REGION: Americas
+      SUBREGION: Caribbean
+      POPULATION: 97928
+      
+Task-4.js:14 
+      NAME: Georgia
+      REGION: Asia
+      SUBREGION: Western Asia
+      POPULATION: 3714000
+      
+Task-4.js:14 
+      NAME: Kenya
+      REGION: Africa
+      SUBREGION: Eastern Africa
+      POPULATION: 53771300
+      
+Task-4.js:14 
+      NAME: Mali
+      REGION: Africa
+      SUBREGION: Western Africa
+      POPULATION: 20250834
+      
+Task-4.js:14 
+      NAME: Vatican City
+      REGION: Europe
+      SUBREGION: Southern Europe
+      POPULATION: 451
+      
+Task-4.js:14 
+      NAME: Peru
+      REGION: Americas
+      SUBREGION: South America
+      POPULATION: 32971846
+      
+Task-4.js:14 
+      NAME: North Macedonia
+      REGION: Europe
+      SUBREGION: Southeast Europe
+      POPULATION: 2077132
+      
+Task-4.js:14 
+      NAME: Guinea-Bissau
+      REGION: Africa
+      SUBREGION: Western Africa
+      POPULATION: 1967998
+      
+Task-4.js:14 
+      NAME: Croatia
+      REGION: Europe
+      SUBREGION: Southeast Europe
+      POPULATION: 4047200
+      
+Task-4.js:14 
+      NAME: Åland Islands
+      REGION: Europe
+      SUBREGION: Northern Europe
+      POPULATION: 29458
+      
+Task-4.js:14 
+      NAME: French Southern and Antarctic Lands
+      REGION: Antarctic
+      SUBREGION: undefined
+      POPULATION: 400
+      
+Task-4.js:14 
+      NAME: Jersey
+      REGION: Europe
+      SUBREGION: Northern Europe
+      POPULATION: 100800
+      
+Task-4.js:14 
+      NAME: Malaysia
+      REGION: Asia
+      SUBREGION: South-Eastern Asia
+      POPULATION: 32365998
+      
